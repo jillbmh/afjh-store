@@ -1,15 +1,37 @@
 import Carousel from 'react-bootstrap/Carousel'
+import { useState, useEffect } from 'react'
+import { useParams, Link } from 'react-router-dom'
+import axios from 'axios'
+
 // import ExampleCarouselImage from 'components/ExampleCarouselImage'
 
 export default function Home() {
+
+  // ! State
+  const [ item, setItem ] = useState(null)
+
+  const { itemId } = useParams()
+  // ! On initial render
+  useEffect(() => {
+    async function getItemData(){
+      try {
+        const { data } = await axios.get('/products/15')
+        setItem(data)
+        console.log(item)
+      } catch (err) {
+        console.error(err)
+      }
+    }
+    getItemData()
+  }, [itemId]) 
   return (
     <Carousel>
       <Carousel.Item>
         <img className="d-block w-100"
-          src="https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg"
+          src="https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg"
           alt="First slide" />
         <Carousel.Caption>
-          <h3>First slide label</h3>
+          <h3>ITEM TITLE</h3>
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </Carousel.Caption>
       </Carousel.Item>
