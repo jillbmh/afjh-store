@@ -1,5 +1,6 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 import Logo from '../images/logo.png'
 
@@ -8,7 +9,25 @@ import Dropdown from 'react-bootstrap/Dropdown'
 
 export default function Nav() {
 
-  const [show, setShow] = useState(false)
+  const navigate = useNavigate()
+  const [categories, setCategories] = useState([])
+
+  useEffect(() => {
+    async function getItemsData() {
+      try {
+        const { data } = await axios.get('/products/categories')
+        setCategories(data)
+      } catch (error) {
+        console.error(error)
+      }
+    }
+    getItemsData()
+  }, [])
+
+  function handleClick(category) {
+    console.log(category)
+    navigate('/categories')
+  }
 
   return (
     <>
@@ -18,16 +37,17 @@ export default function Nav() {
           <Dropdown.Toggle variant="success" id="dropdown-basic">
             Dropdown Button
           </Dropdown.Toggle>
-
           <Dropdown.Menu>
-            <Dropdown.Item >Men&apos;s Clothing</Dropdown.Item>
-            <Dropdown.Item >Women&apos;s Clothing</Dropdown.Item>
-            <Dropdown.Item >Jewellery</Dropdown.Item>
-            <Dropdown.Item >Electronics</Dropdown.Item>
+            {categories.length > 0 ?
+              categories.map(category => {
+                return <Dropdown.Item key={category} onClick={() => handleClick(category)}>{category}</Dropdown.Item>
+              })
+              :
+              'Error'
+            }
           </Dropdown.Menu>
         </Dropdown>
       </nav>
-
     </>
   )
 }
