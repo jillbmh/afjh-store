@@ -40,11 +40,11 @@ export default function Nav() {
 
   return (
     <>
-      <nav className="header-nav">
+      <nav className="nav-header">
         <Link to="/"><img src={Logo} className="nav-logo" alt="AFJH logo" /></Link>
-        <Dropdown>
+        <Dropdown className="nav-dropdown">
           <Dropdown.Toggle variant="success" id="dropdown-basic">
-            Dropdown Button
+            Categories
           </Dropdown.Toggle>
           <Dropdown.Menu>
             {/* For every item in the categories array, a dropdown item is created */}

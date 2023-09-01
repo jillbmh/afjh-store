@@ -37,16 +37,18 @@ export default function CategoriesList() {
               items.filter(item => item.category === state.category)
                 .map(item => {
                   return (
-                    <Col
-                      className="item"
-                      xs="6"
-                      md="4"
-                      lg="3"
-                      key={item.id}
-                      style={{ backgroundImage: `url(${item.image})` }}
-                    >
-                      {item.title}
-                    </Col>
+                    <>
+                      <Col
+                        className="item"
+                        xs="6"
+                        md="4"
+                        lg="3"
+                        key={item.id}
+                        style={{ backgroundImage: `url(${item.image})` }}
+                      >
+                      </Col>
+                      <h3>{item.title}</h3>
+                    </>
                   )
                 })
             }
