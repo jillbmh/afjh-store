@@ -26,7 +26,13 @@ export default function Nav() {
 
   function handleClick(category) {
     console.log(category)
-    navigate('/categories')
+    navigate(
+      '/categories',
+      {
+        state: {
+          category,
+        },
+      })
   }
 
   return (

@@ -1,3 +1,8 @@
+import { useLocation } from 'react-router-dom'
+
 export default function CategoriesList() {
-  return <h1>Categories List</h1>
+
+  const { state } = useLocation()
+
+  return <h1>{state.category}</h1>
 }
