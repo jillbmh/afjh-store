@@ -7,9 +7,12 @@ import Col from 'react-bootstrap/Col'
 
 export default function CategoriesList() {
 
+  // The state of "category" was sent via Nav.js with useNavigate
+  // useLocation unwraps this state so it can be accessed in this file
   const { state } = useLocation()
   const [items, setItems] = useState([])
 
+  // This function fetches all the items
   useEffect(() => {
     async function getItemsData() {
       try {
@@ -20,7 +23,7 @@ export default function CategoriesList() {
       }
     }
     getItemsData()
-  }, [state])
+  }, [])
 
   return (
     <>
@@ -29,6 +32,8 @@ export default function CategoriesList() {
         <Container fluid>
           <Row>
             {
+              // The items are filtered, returning only those whose category matches the current category state
+              // Then, the remaining items are mapped, and, for each item, a new Col is created, displaying a picture and the title text
               items.filter(item => item.category === state.category)
                 .map(item => {
                   return (
