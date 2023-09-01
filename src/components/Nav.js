@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import Logo from '../images/logo.png'
 
-import Modal from 'react-bootstrap/Modal'
+import Dropdown from 'react-bootstrap/Dropdown'
 
 
 export default function Nav() {
@@ -14,20 +14,24 @@ export default function Nav() {
     <>
       <nav className="header-nav">
         <Link to="/"><img src={Logo} className="nav-logo" alt="AFJH logo" /></Link>
-        <div className="nav-toggle" onClick={() => setShow(true)}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </nav>
-      {/* <Modal show={show} fullscreen={true} onHide={() => setShow(false)}>
-        <Modal.Header className="centred text-center" closeButton>
-          <nav onClick={() => setShow(false)}>
-            <Link className="" to="/categoriesList">Categories</Link>
+        <Dropdown>
+          <Dropdown.Toggle variant="success" id="dropdown-basic">
+            Dropdown Button
+          </Dropdown.Toggle>
 
-          </nav>
-        </Modal.Header>
-      </Modal> */}
+          <Dropdown.Menu>
+            <Dropdown.Item >Men&apos;s Clothing</Dropdown.Item>
+            <Dropdown.Item >Women&apos;s Clothing</Dropdown.Item>
+            <Dropdown.Item >Jewellery</Dropdown.Item>
+            <Dropdown.Item >Electronics</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
+      </nav>
+
     </>
   )
 }
+
+
+
+
