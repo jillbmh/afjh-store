@@ -3,11 +3,13 @@
 .nav-header {
   display: flex;
   justify-content: space-between;
+  margin:10px;
+
 }
 
-.nav-dropdown{
+// .nav-dropdown{
   
-}
+// }
 
 .nav-toggle {
   cursor: pointer;
@@ -21,6 +23,6 @@
 
 .dropdown-button {
   height: 42px;
-  background-color: teal;
+  background-color: #4d9f98;
+  color:#fefffe;
 }
-

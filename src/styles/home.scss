@@ -1,0 +1,45 @@
+.banner-container {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    -webkit-box-shadow: 0px 33px 29px -6px rgba(0,0,0,0.5);
+-moz-box-shadow: 0px 33px 29px -6px rgba(0,0,0,0.5);
+box-shadow: 0px 33px 29px -6px rgba(0,0,0,0.5);
+margin-bottom:60px;
+    img {
+    max-height: 140px;
+}
+}
+.carousel {
+    max-width: 600px;
+    margin: 0 auto;
+        img {
+            max-width: 300px;
+            margin: 0 auto;
+        };
+}
+.signup-container {
+    height:250px; 
+    width:100%;
+    background: rgb(2,0,36);
+background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(0,0,0,1) 49%, rgba(104,114,116,1) 100%);
+}
+
+    .neon {
+        animation: neonAnim 2s alternate-reverse infinite;
+        color: #4CA098;
+    }
+    @keyframes neonAnim {
+        from {
+            text-shadow:
+        0 0 19px rgba(76, 160, 152, .7),
+            0 0 49px rgba(76, 160, 152, .7),
+            0 0 109px rgba(76, 160, 152, .7);
+        }
+        to {
+            text-shadow:
+            0 0 14px rgba(76, 160, 152, .7),
+            0 0 29px rgba(76, 160, 152, .7),
+            0 0 69px rgba(76, 160, 152, .7); 
+        }
+    }
