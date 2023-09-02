@@ -43,7 +43,7 @@ export default function Nav() {
       <nav className="nav-header">
         <Link to="/"><img src={Logo} className="nav-logo" alt="AFJH logo" /></Link>
         <Dropdown className="nav-dropdown">
-          <Dropdown.Toggle variant="success" id="dropdown-basic">
+          <Dropdown.Toggle variant="success" id="dropdown-basic" className="dropdown-button">
             Categories
           </Dropdown.Toggle>
           <Dropdown.Menu>
