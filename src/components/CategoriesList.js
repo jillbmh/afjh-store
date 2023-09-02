@@ -29,7 +29,7 @@ export default function CategoriesList() {
     <>
       <h1>{state.category}</h1>
       {items.length > 0 ?
-        <Container fluid>
+        <Container fluid >
           <Row>
             {
               // The items are filtered, returning only those whose category matches the current category state
@@ -37,18 +37,17 @@ export default function CategoriesList() {
               items.filter(item => item.category === state.category)
                 .map(item => {
                   return (
-                    <>
+                    <div key={item.id} className="item-container">
                       <Col
                         className="item"
                         xs="6"
                         md="4"
-                        lg="3"
-                        key={item.id}
+                        lg="3" 
                         style={{ backgroundImage: `url(${item.image})` }}
                       >
                       </Col>
                       <h3>{item.title}</h3>
-                    </>
+                    </div>
                   )
                 })
             }
