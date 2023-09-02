@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, Link } from 'react-router-dom'
 import axios from 'axios'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
@@ -39,6 +39,8 @@ export default function CategoriesList() {
                   return (
                     <div key={item.id} className="item-container">
                       <Col
+                        as={Link}
+                        to={`/categories/${item.id}`}
                         className="item"
                         xs="6"
                         md="4"
