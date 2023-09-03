@@ -32,8 +32,7 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/categories' element={<CategoriesList />} />
-          <Route path='/categories/:category' element={<CategorySingle />} />
-          <Route path='/categories/:itemId' element={<Item />} />
+          <Route path='/categories/:itemId' element={<CategorySingle />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </main>

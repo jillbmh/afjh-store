@@ -1,78 +1,79 @@
 import Carousel from 'react-bootstrap/Carousel'
 import { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
 import axios from 'axios'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 
-// import ExampleCarouselImage from 'components/ExampleCarouselImage'
-
 export default function Home() {
-
-  // ! State
-  const [ item, setItem ] = useState(null)
+  // State
+  const [topRatedItem1, setTopRatedItem1] = useState(null)
+  const [topRatedItem2, setTopRatedItem2] = useState(null)
+  const [topRatedItem3, setTopRatedItem3] = useState(null)
   const [show, setShow] = useState(false)
+
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
 
-  const { itemId } = useParams()
-  // ! On initial render
+  // On initial render
   useEffect(() => {
-    async function getItemData(){
+    async function fetchTopRatedItems() {
       try {
-        const { data } = await axios.get('/products/15')
-        setItem(data)
-        console.log(item)
-      } catch (err) {
-        console.error(err)
+        const { data } = await axios.get('/products')
+        const sortedItems = data.sort((a, b) => b.rate - a.rate)
+        setTopRatedItem1(sortedItems[0])
+        setTopRatedItem2(sortedItems[1])
+        setTopRatedItem3(sortedItems[2])
+      } catch (error) {
+        console.log(error)
       }
     }
-    getItemData()
-  }, [itemId]) 
+    fetchTopRatedItems()
+  }, [])
+
   return (
     <>
       <section className="banner-container">
         <img className="banner"
-          src= "https://www.northfieldshopping.co.uk/wp-content/uploads/2017/03/vvvvvvBW5503-Northfield-Black-Friday-Banner-amends-Web-Banner.jpg"
-          alt= "Black Friday Banner" />
+          src="https://www.northfieldshopping.co.uk/wp-content/uploads/2017/03/vvvvvvBW5503-Northfield-Black-Friday-Banner-amends-Web-Banner.jpg"
+          alt="Black Friday Banner" />
       </section>
-      
-      <Carousel>
-        <Carousel.Item>
-          <img className="d-block w-100"
-            src="https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg"
-            alt="First slide" />
-          <Carousel.Caption>
-            <h3>ITEM TITLE</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img className="d-block w-100"
-            src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-            alt="First slide" />
-          <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img className="d-block w-100"
-            src="https://food-images.files.bbci.co.uk/food/recipes/basic_white_bread_18916_16x9.jpg"
-            alt="First slide" />
-          <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
-          </Carousel.Caption>
-        </Carousel.Item>
+
+      <Carousel clasName= "carousel-container">
+        {topRatedItem1 && (
+          <Carousel.Item>
+            <img className='carousel-image' src={topRatedItem1.image} alt="First slide" />
+            <Carousel.Caption>
+              <h3>{topRatedItem1.title}</h3>
+              <p>Rated: {topRatedItem1.rate}</p>
+              <p>£{topRatedItem1.price}</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+        )}
+        {topRatedItem2 && (
+          <Carousel.Item>
+            <img className='carousel-image' src={topRatedItem2.image} alt="Second slide" />
+            <Carousel.Caption>
+              <h3>{topRatedItem2.title}</h3>
+              <p>Rated: {topRatedItem2.rate}</p>
+              <p>£{topRatedItem2.price}</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+        )}
+        {topRatedItem3 && (
+          <Carousel.Item>
+            <img className='carousel-image' src={topRatedItem3.image} alt="Third slide" />
+            <Carousel.Caption>
+              <h3>{topRatedItem3.title}</h3>
+              <p>Rated: {topRatedItem3.rate}</p>
+              <p>£{topRatedItem3.price}</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+        )}
       </Carousel>
-      
 
       <section className="signup-container">
         <div className="neon">
-        Sign up for 10% discount
+          Sign up for 10% discount
         </div>
         <Button variant="primary" onClick={handleShow}>
           Sign Up
@@ -80,9 +81,9 @@ export default function Home() {
 
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
+            <Modal.Title>Sign up now!</Modal.Title>
           </Modal.Header>
-          <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
+          <Modal.Body>We would love to link this to a register form in the future!</Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>
               Close
@@ -96,5 +97,3 @@ export default function Home() {
     </>
   )
 }
-
-        

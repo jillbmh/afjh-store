@@ -17,7 +17,7 @@ export default function Item() {
   useEffect(() => {
     async function getItemData(){
       try {
-        const { data } = await axios.get('/products/1')
+        const { data } = await axios.get('/products/${itemId}')
         setItem(data)
         console.log(item)
       } catch (err) {
