@@ -16,7 +16,7 @@ export default function CategoriesList() {
   useEffect(() => {
     async function getItemsData() {
       try {
-        const { data } = await axios.get('/products')
+        const { data } = await axios.get('/api/products')
         setItems(data)
       } catch (error) {
         console.error(error)

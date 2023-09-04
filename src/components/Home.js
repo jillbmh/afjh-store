@@ -18,7 +18,7 @@ export default function Home() {
   useEffect(() => {
     async function fetchTopRatedItems() {
       try {
-        const { data } = await axios.get('/products')
+        const { data } = await axios.get('/api/products')
         const sortedItems = data.sort((a, b) => b.rate - a.rate)
         setTopRatedItem1(sortedItems[0])
         setTopRatedItem2(sortedItems[1])

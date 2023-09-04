@@ -19,7 +19,7 @@ export default function CategorySingle() {
   useEffect(() => {
     async function getItemData(){
       try {
-        const { data } = await axios.get(`/products/${Number(itemId)}`)
+        const { data } = await axios.get(`/api/products/${Number(itemId)}`)
         setItem(data)
         console.log('Data received from API: ', itemId)
       } catch (err) {

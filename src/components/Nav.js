@@ -13,7 +13,7 @@ export default function Nav() {
   useEffect(() => {
     async function getItemsData() {
       try {
-        const { data } = await axios.get('/products/categories')
+        const { data } = await axios.get('/api/products/categories')
         setCategories(data)
       } catch (error) {
         console.error(error)
