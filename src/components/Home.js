@@ -41,37 +41,49 @@ export default function Home() {
           alt="Black Friday Banner" />
       </section>
 
-      <Carousel className= "carousel-container">
+      <Carousel className="carousel-container">
         {topRatedItem1 && (
-          <Carousel.Item>
-            <img className='carousel-image' src={topRatedItem1.image} alt="First slide" />
-            <Carousel.Caption className='carousel-caption'>
-              <h3>{topRatedItem1.title}</h3>
-              <p className="black">Rated: {topRatedItem1.rating.rate}</p>
-              <p>£{topRatedItem1.price}</p>
+          <Carousel.Item className="carousel-item">
+            <div className="image-div">
+              <img className='carousel-image' src={topRatedItem1.image} alt="Second slide" />
+            </div>
+            <Carousel.Caption>
+              <div className="carousel-text">
+                <h3>{topRatedItem1.title}</h3>
+                <p className="black">Rated: {topRatedItem1.rating.rate}/5 by our customers</p>
+                <p>£{topRatedItem1.price}</p>
+              </div>
             </Carousel.Caption>
           </Carousel.Item>
         )}
         {topRatedItem2 && (
-          <Carousel.Item>
-            <img className='carousel-image' src={topRatedItem2.image} alt="Second slide" />
-            <Carousel.Caption className='carousel-caption'>
-              <h3>{topRatedItem2.title}</h3>
-              <p>Rated: {topRatedItem2.rating.rate}</p>
-              <p>£{topRatedItem2.price}</p>
+          <Carousel.Item className="carousel-item">
+            <div className="image-div">
+              <img className='carousel-image' src={topRatedItem2.image} alt="Second slide" />
+            </div>
+            <Carousel.Caption>
+              <div className="carousel-text">
+                <h3>{topRatedItem2.title}</h3>
+                <p>Rated: {topRatedItem2.rating.rate}/5 by our customers</p>
+                <p>£{topRatedItem2.price}</p>
+              </div>
             </Carousel.Caption>
           </Carousel.Item>
         )}
         {topRatedItem3 && (
-          <Carousel.Item>
-            <img className='carousel-image' src={topRatedItem3.image} alt="Third slide" />
-            <Carousel.Caption className='carousel-caption'>
-              <h3>{topRatedItem3.title}</h3>
-              <p>Rated: {topRatedItem3.rating.rate} /5 by our customers</p>
-              <p>£{topRatedItem3.price}</p>
+          <Carousel.Item className="carousel-item">
+            <div className="image-div">
+              <img className='carousel-image' src={topRatedItem3.image} alt="Second slide" />
+            </div>
+            <Carousel.Caption>
+              <div className="carousel-text">
+                <h3>{topRatedItem3.title}</h3>
+                <p>Rated: {topRatedItem3.rating.rate}/5 by our customers</p>
+                <p>£{topRatedItem3.price}</p>
+              </div>
             </Carousel.Caption>
           </Carousel.Item>
-        )} 
+        )}
       </Carousel>
 
       <section className="signup-container">
