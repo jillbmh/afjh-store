@@ -30,7 +30,7 @@ export default function CategoriesList() {
       <div className="category-inside">
         <h1>{state.category}</h1>
         {items.length > 0 ?
-          <Container fluid >
+          <Container fluid className="fluid-container" >
             <Row>
               {
                 // The items are filtered, returning only those whose category matches the current category state

@@ -41,7 +41,7 @@ export default function Home() {
           alt="Black Friday Banner" />
       </section>
 
-      <Carousel clasName= "carousel-container">
+      <Carousel className= "carousel-container">
         {topRatedItem1 && (
           <Carousel.Item>
             <img className='carousel-image' src={topRatedItem1.image} alt="First slide" />
