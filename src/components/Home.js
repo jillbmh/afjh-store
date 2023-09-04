@@ -52,7 +52,7 @@ export default function Home() {
             </Carousel.Caption>
           </Carousel.Item>
         )}
-        {/* {topRatedItem2 && (
+        {topRatedItem2 && (
           <Carousel.Item>
             <img className='carousel-image' src={topRatedItem2.image} alt="Second slide" />
             <Carousel.Caption className='carousel-caption'>
@@ -71,7 +71,7 @@ export default function Home() {
               <p>£{topRatedItem3.price}</p>
             </Carousel.Caption>
           </Carousel.Item>
-        )} */}
+        )} 
       </Carousel>
 
       <section className="signup-container">

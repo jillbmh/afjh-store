@@ -26,7 +26,14 @@
   .carousel-caption {
     color: black;
     flex: 1;
-    text-align: left;
+    text-align: right;
+    right:0%;
+    top:0%;
+    left:auto;
+    max-width: 300px;
+    padding:20px;
+    max-height:150px;
+
   }
  .carousel {
     display: flex;
@@ -68,3 +75,15 @@
         }
     }
 
+    .carousel-control-prev-icon {
+        background-image: url('../images/left\ arrow.png');
+    }
+    .carousel-control-next-icon {
+        background-image: url('../images/right\ arrow.png');
+    }
+
+    .btn-primary {
+        background-color:#4d9f98;
+        color:#fefffe;
+    
+    }
