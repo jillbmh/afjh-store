@@ -49,6 +49,7 @@ export default function CategoriesList() {
                       >
                       </Col>
                       <h3>{item.title}</h3>
+                      <p>£{item.price}</p>
                     </div>
                   )
                 })
