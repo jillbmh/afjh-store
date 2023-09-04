@@ -41,11 +41,12 @@
     }
 }
 .signup-container {
-    height:250px; 
+    height:110px; 
     width:100%;
+    padding-top: 10px;
     text-align: center;
     background: rgb(2,0,36);
-    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(0,0,0,1) 49%, rgba(104,114,116,1) 100%);
+    background: linear-gradient(to bottom, rgba(2,0,36,1) 40%,  rgba(104,114,116,1) 100%);
 }
 
     .neon {
