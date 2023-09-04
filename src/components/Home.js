@@ -50,7 +50,7 @@ export default function Home() {
             <Carousel.Caption>
               <div className="carousel-text">
                 <h3>{topRatedItem1.title}</h3>
-                <p className="black">Rated: {topRatedItem1.rating.rate}</p>
+                <p className="black">Rated: {topRatedItem1.rating.rate}/5 by our customers</p>
                 <p>£{topRatedItem1.price}</p>
               </div>
             </Carousel.Caption>
@@ -64,7 +64,7 @@ export default function Home() {
             <Carousel.Caption>
               <div className="carousel-text">
                 <h3>{topRatedItem2.title}</h3>
-                <p>Rated: {topRatedItem2.rating.rate}</p>
+                <p>Rated: {topRatedItem2.rating.rate}/5 by our customers</p>
                 <p>£{topRatedItem2.price}</p>
               </div>
             </Carousel.Caption>
@@ -78,7 +78,7 @@ export default function Home() {
             <Carousel.Caption>
               <div className="carousel-text">
                 <h3>{topRatedItem3.title}</h3>
-                <p>Rated: {topRatedItem3.rating.rate} /5 by our customers</p>
+                <p>Rated: {topRatedItem3.rating.rate}/5 by our customers</p>
                 <p>£{topRatedItem3.price}</p>
               </div>
             </Carousel.Caption>

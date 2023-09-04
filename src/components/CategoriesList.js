@@ -49,8 +49,10 @@ export default function CategoriesList() {
                           style={{ backgroundImage: `url(${item.image})` }}
                         >
                         </Col>
-                        <h3>{item.title}</h3>
-                        <p>£{item.price}</p>
+                        <div className="category-text">
+                          <h3>{item.title}</h3>
+                          <p>£{item.price}</p>
+                        </div>
                       </div>
                     )
                   })
