@@ -63,7 +63,6 @@ export default function CategoriesList() {
           'ERROR'
         }
       </div>
-
     </div>
 
   )
