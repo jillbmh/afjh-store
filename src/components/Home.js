@@ -23,6 +23,9 @@ export default function Home() {
         setTopRatedItem1(sortedItems[0])
         setTopRatedItem2(sortedItems[1])
         setTopRatedItem3(sortedItems[2])
+        console.log('TOP', topRatedItem1.rating.rate)
+        console.log('TOP', topRatedItem2.rating.rate)
+        console.log('TOP', topRatedItem3.rating.rate)
       } catch (error) {
         console.log(error)
       }
@@ -44,7 +47,7 @@ export default function Home() {
             <img className='carousel-image' src={topRatedItem1.image} alt="First slide" />
             <Carousel.Caption>
               <h3>{topRatedItem1.title}</h3>
-              <p>Rated: {topRatedItem1.rate}</p>
+              <p className="black">Rated: {topRatedItem1.rating.rate}</p>
               <p>£{topRatedItem1.price}</p>
             </Carousel.Caption>
           </Carousel.Item>
@@ -54,7 +57,7 @@ export default function Home() {
             <img className='carousel-image' src={topRatedItem2.image} alt="Second slide" />
             <Carousel.Caption>
               <h3>{topRatedItem2.title}</h3>
-              <p>Rated: {topRatedItem2.rate}</p>
+              <p>Rated: {topRatedItem2.rating.rate}</p>
               <p>£{topRatedItem2.price}</p>
             </Carousel.Caption>
           </Carousel.Item>
@@ -64,7 +67,7 @@ export default function Home() {
             <img className='carousel-image' src={topRatedItem3.image} alt="Third slide" />
             <Carousel.Caption>
               <h3>{topRatedItem3.title}</h3>
-              <p>Rated: {topRatedItem3.rate}</p>
+              <p>Rated: {topRatedItem3.rating.rate}</p>
               <p>£{topRatedItem3.price}</p>
             </Carousel.Caption>
           </Carousel.Item>
