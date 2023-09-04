@@ -31,38 +31,51 @@ export default function CategorySingle() {
 
   return (
     <>
-      { item ? (
+      {item ? (
         <>
-          <section className='product-container'>
-            <div className='product-image' style={{ backgroundImage: `url(${item.image})` }}></div>
-            <h1 className='featured'>{item.title}</h1>
-            <p>£{item.price}</p>
-            <p>{item.description}</p> 
+          <section className="product-container">
+            <div
+              className="product-image"
+              style={{
+                backgroundImage: `url(${item.image})`,
+                height: '300px',
+                backgroundSize: 'contain',
+              }}
+            />
+            <div className="product-title">
+              <p>{item.title}</p>
+            </div>
+            <div className="price">
+              <p>£{item.price}</p>
+            </div>
+            <div className="item-description">
+              <p>{item.description}</p>
+            </div>
           </section>
-          <section >
+          <div className="product-button">
             <Button variant="primary" onClick={handleShow}>
-              Add to Basket
+            Add to Basket
             </Button>
-            <Modal show={show} onHide={handleClose}>
-              <Modal.Header closeButton>
-                <Modal.Title>Add to basket!</Modal.Title>
-              </Modal.Header>
-              <Modal.Body>We would love to link this to a register form in the future!</Modal.Body>
-              <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
-                  Close
-                </Button>
-                <Button variant="primary" onClick={handleClose}>
-                  Save Changes
-                </Button>
-              </Modal.Footer>
-            </Modal> 
-          </section>
+          </div>
+          <Modal show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+              <Modal.Title>Add to basket!</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>We would love to link this to a register form in the future!</Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={handleClose}>
+                Close
+              </Button>
+              <Button variant="primary" onClick={handleClose}>
+                Save Changes
+              </Button>
+            </Modal.Footer>
+          </Modal>
         </>
       ) : (
         'Loading...'
-        // <Spinner /> 
+        // <Spinner />
       )}
     </>
   )
-}
+}  
