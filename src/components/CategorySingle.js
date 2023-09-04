@@ -61,7 +61,7 @@ export default function CategorySingle() {
             <Modal.Header closeButton>
               <Modal.Title>Add to basket!</Modal.Title>
             </Modal.Header>
-            <Modal.Body>We would love to link this to a register form in the future!</Modal.Body>
+            <Modal.Body>We would love to link this to a basket in the future!</Modal.Body>
             <Modal.Footer>
               <Button variant="secondary" onClick={handleClose}>
                 Close
