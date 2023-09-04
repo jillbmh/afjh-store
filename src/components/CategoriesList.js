@@ -28,7 +28,7 @@ export default function CategoriesList() {
   return (
     <div className="category-page">
       <div className="category-inside">
-        <h1>{state.category}</h1>
+        <h1>{state.category.charAt(0).toUpperCase() + state.category.substr(1)}</h1>
         {items.length > 0 ?
           <Container fluid className="fluid-container" >
             <Row>

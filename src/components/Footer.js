@@ -4,9 +4,9 @@ export default function Footer() {
   return (
     <footer>
       &copy; AFJH
-      <nav>
-        <Link to="/">Contact Us</Link>
-        <Link to="/">Cookie Policy</Link>
+      <nav className="footer-nav">
+        <Link to="/" className="footer-link">Contact Us</Link>
+        <Link to="/" className="footer-link">Cookie Policy</Link>
       </nav>
     </footer>
   )
