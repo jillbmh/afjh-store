@@ -26,40 +26,43 @@ export default function CategoriesList() {
   }, [])
 
   return (
-    <>
-      <h1>{state.category}</h1>
-      {items.length > 0 ?
-        <Container fluid >
-          <Row>
-            {
-              // The items are filtered, returning only those whose category matches the current category state
-              // Then, the remaining items are mapped, and, for each item, a new Col is created, displaying a picture and the title text
-              items.filter(item => item.category === state.category)
-                .map(item => {
-                  return (
-                    <div key={item.id} className="item-container">
-                      <Col
-                        as={Link}
-                        to={`/categories/${item.id}`}
-                        className="item"
-                        xs="6"
-                        md="4"
-                        lg="3" 
-                        style={{ backgroundImage: `url(${item.image})` }}
-                      >
-                      </Col>
-                      <h3>{item.title}</h3>
-                      <p>£{item.price}</p>
-                    </div>
-                  )
-                })
-            }
-          </Row>
-        </Container >
-        :
-        'ERROR'
-      }
-    </>
+    <div className="category-page">
+      <div className="category-inside">
+        <h1>{state.category}</h1>
+        {items.length > 0 ?
+          <Container fluid >
+            <Row>
+              {
+                // The items are filtered, returning only those whose category matches the current category state
+                // Then, the remaining items are mapped, and, for each item, a new Col is created, displaying a picture and the title text
+                items.filter(item => item.category === state.category)
+                  .map(item => {
+                    return (
+                      <div key={item.id} className="item-container">
+                        <Col
+                          as={Link}
+                          to={`/categories/${item.id}`}
+                          className="item"
+                          xs="6"
+                          md="4"
+                          lg="3"
+                          style={{ backgroundImage: `url(${item.image})` }}
+                        >
+                        </Col>
+                        <h3>{item.title}</h3>
+                        <p>£{item.price}</p>
+                      </div>
+                    )
+                  })
+              }
+            </Row>
+          </Container >
+          :
+          'ERROR'
+        }
+      </div>
+
+    </div>
 
   )
 }
