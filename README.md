@@ -2,7 +2,7 @@
 
 ## Description
 
-My second project during the General Assembly's Software Engineering Immersive Course was a pair project, we had just 2 days to complete this one. 
+My second project during the General Assembly's Software Engineering Immersive was a pair project, we had just 2 days to complete this one. 
 
 You can find the link to this project on netlify, here: https://64f5fc719369b4070a913fcd--jhaf-store.netlify.app/
 
