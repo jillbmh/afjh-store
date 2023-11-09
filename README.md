@@ -24,7 +24,7 @@ We used the following technologies:
 
 We were given the following brief:
 
-![Technical Requirements](images/p2-requirements.png)
+![Technical Requirements](src/images/p2-requirements.png)
 
 
 ## The idea
@@ -36,15 +36,15 @@ We wanted to create an ecommerce store with some basic GET and display functiona
 
 Once we had decided what to do, we started by creating the homepage wireframe.
 
-![Wireframe](images/p2-wireframe.png)
+![Wireframe](src/images/p2-wireframe.png)
 
 We liked the idea of creating it mobile first and making it really modern. In the header we wanted a logo, burger menu, account and search icon. We researched colour themes and liked this pallet:
 
-![colour ideas](images/p2-colours.png)
+![colour ideas](src/images/p2-colours.png)
 
 We used a shared google document to plan and list what we were each doing and Slack messages to keep each other up to date.
 
-![to do list](images/p2-todo.png)
+![to do list](src/images/p2-todo.png)
 
 
 ## Build/Code Process
@@ -53,13 +53,13 @@ We both jointly did the App.js and Index.js code and then divided up the compone
 
 I used Bootstrap to import a carousel and created a function to choose the top 3 highest rated items for the carousel. 
 
-![code example](images/p2-code.png)
+![code example](src/images/p2-code.png) 
 
 My plan was to get the functionality working and then make it more DRY if I had more time. I didn't get back to making it more dry but I was really pleased to do this functionality.
 
 I used Bootstrap to add pretend buttons to the home page to make it look more realistic:
 
-![modal](images/Bootstrap.png)
+![modal](src/images/Bootstrap.png)
 
 ## Challenges and Wins
 
